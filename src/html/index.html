@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Poppins:500|Roboto:400,500,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+
+<link rel="stylesheet" href="./style.css">
+
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Адаптивный дизайн - тестовое задание</title>
+</head>
+<body>
+
+<!-- Sprite -->
+
+<svg style="display: none;";>
+    <symbol id="menu__item_img_1" viewBox="-19 -19 600 600">
+        <path d="m251.25 12.5c0-6.90625-5.59375-12.5-12.5-12.5h-226.25c-6.90625 0-12.5 5.59375-12.5 12.5v226.25c0 6.90625 5.59375 12.5 12.5 12.5h226.25c6.90625 0 12.5-5.59375 12.5-12.5zm-25 213.75h-201.25v-201.25h201.25zm0 0"/><path d="m562.5 12.5c0-6.90625-5.59375-12.5-12.5-12.5h-226.25c-6.90625 0-12.5 5.59375-12.5 12.5v226.25c0 6.90625 5.59375 12.5 12.5 12.5h226.25c6.90625 0 12.5-5.59375 12.5-12.5zm-25 213.75h-201.25v-201.25h201.25zm0 0"/><path d="m251.25 323.75c0-6.90625-5.59375-12.5-12.5-12.5h-226.25c-6.90625 0-12.5 5.59375-12.5 12.5v226.25c0 6.90625 5.59375 12.5 12.5 12.5h226.25c6.90625 0 12.5-5.59375 12.5-12.5zm-25 212.5h-201.25v-200h201.25zm0 0"/><path d="m562.5 323.75c0-6.90625-5.59375-12.5-12.5-12.5h-226.25c-6.90625 0-12.5 5.59375-12.5 12.5v226.25c0 6.90625 5.59375 12.5 12.5 12.5h226.25c6.90625 0 12.5-5.59375 12.5-12.5zm-25 212.5h-201.25v-200h201.25zm0 0"/>
+    </symbol>
+
+    <symbol id="menu__item_img_2" viewBox="0 0 512 512">
+        <polygon points="296.603,247.147 278.535,294.731 213.687,122.971 158.257,247.147 0,247.147 0,280.538 179.919,280.538 
+			211.107,210.671 278.446,389.029 319.643,280.538 512,280.538 512,247.147 		"/>
+    </symbol>
+
+    <symbol id="menu__item_img_3" viewBox="0 -28 512.001 512">
+        <path d="m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm-112.96875-425.523437c-31.066406 0-59.605469 12.398437-80.367188 34.914062-21.070312 22.855469-32.675781 54.449219-32.675781 88.964844 0 36.417968 13.535157 68.988281 43.882813 105.605468 29.332031 35.394532 72.960937 72.574219 123.476562 115.625l.09375.078126c17.660156 15.050781 37.679688 32.113281 58.515625 50.332031 20.960938-18.253907 41.011719-35.34375 58.707031-50.417969 50.511719-43.050781 94.136719-80.222656 123.46875-115.617188 30.34375-36.617187 43.878907-69.1875 43.878907-105.605468 0-34.515625-11.605469-66.109375-32.675781-88.964844-20.757813-22.515625-49.300782-34.914062-80.363282-34.914062-22.757812 0-43.652344 7.234374-62.101562 21.5-16.441406 12.71875-27.894532 28.796874-34.609375 40.046874-3.453125 5.785157-9.53125 9.238282-16.261719 9.238282s-12.808594-3.453125-16.261719-9.238282c-6.710937-11.25-18.164062-27.328124-34.609375-40.046874-18.449218-14.265626-39.34375-21.5-62.097656-21.5zm0 0"/>
+
+    <symbol id="menu__item_img_4" viewBox="0 0 512 512">
+            <path d="m256 0c-140.699219 0-256 116.300781-256 257 0 139.882812 114.25 255 256 255 141.574219 0 256-114.945312 256-255 0-140.699219-115.300781-257-256-257zm45 477.5c-14.398438 3-29.699219 4.5-45 4.5s-30.601562-1.5-45-4.5v-70.199219c0-16.800781 4.5-22.800781 10.5-30.902343 3.054688-3.492188 4.898438-6.625 18.597656-27.296876l-23.097656-3.601562c-59.402344-8.699219-82.800781-39.601562-92.101562-63.601562-12-32.097657-5.699219-72.300782 15.902343-97.796876 3.300781-3.902343 6-10.503906 3.601563-17.402343-4.503906-13.800781-3.902344-35.699219-.902344-44.101563 15.90625 2.273438 32.261719 13.667969 45.902344 21.902344 6.285156 3.667969 9.582031 2.699219 12.597656 3 10.960938-2.28125 28.058594-7.800781 54.300781-7.800781 16.199219 0 33.300781 2.398437 50.101563 7.199219 3.003906-.070313 7.832031 2.484374 16.199218-2.398438 14.257813-8.6875 30.058594-19.691406 45.898438-21.902344 3 8.402344 3.601562 30.300782-.898438 44.101563-2.402343 6.898437.296876 13.5 3.601563 17.402343 21.597656 25.5 27.898437 65.699219 15.898437 97.796876-9.300781 24-32.699218 54.902343-92.101562 63.601562l-23.097656 3.601562c14.160156 21.367188 15.652344 23.929688 18.601562 27.296876 5.996094 8.101562 10.496094 14.101562 10.496094 30.902343zm30-8.699219v-61.5c0-17.101562-3.601562-28.5-8.402344-36.902343 45.601563-12.296876 78.003906-39.300782 92.402344-78 15.300781-40.796876 8.402344-89.398438-17.101562-123 4.503906-20.097657 4.503906-52.199219-6.296876-67.199219-4.800781-6.597657-11.402343-10.199219-19.800781-10.199219-.300781 0-.300781 0-.300781 0-23.261719 1.257812-41.570312 12.972656-61.199219 24.898438-18-4.800782-36.300781-7.199219-54.601562-7.199219-18.597657 0-37.199219 2.699219-53.695313 7.199219-20.664062-12.460938-38.796875-23.671876-62.703125-24.898438-7.5 0-14.101562 3.601562-18.902343 10.199219-10.796876 15-10.796876 47.101562-6.296876 67.199219-25.503906 33.601562-32.402343 82.5-17.101562 123 14.398438 38.699218 46.800781 65.703124 92.402344 78-3.722656 6.511718-6.667969 14.914062-7.828125 26.285156-9.210938 3.175781-17.199219 4.210937-24.628907 2.027344-7.835937-2.316407-13.941406-7.546876-19.246093-16.46875-11.914063-20.015626-32.207031-36.355469-55.3125-34.230469l2.636719 29.882812c10.699218-.980469 21.347656 10.339844 26.878906 19.671875 9.125 15.367188 21.417968 25.445313 36.546875 29.914063 11.230469 3.308593 21.496093 3.230469 32.550781.871093v40.449219c-87.300781-30.601562-151-114-151-211.800781 0-124.199219 101.800781-227 226-227s226 102.800781 226 227c0 97.800781-63.699219 181.199219-151 211.800781zm0 0"/>
+    </symbol>
+
+    <symbol id="menu__item_img_5" viewBox="0 0 491.1 491.1">
+        <path transform="translate(0 -540.36)" d="M401.5,863.31c-12,0-23.4,4.7-32,13.2c-8.6,8.6-13.4,19.8-13.4,31.8s4.7,23.2,13.4,31.8
+        c8.7,8.5,20,13.2,32,13.2c24.6,0,44.6-20.2,44.6-45S426.1,863.31,401.5,863.31z M401.5,933.31c-13.8,0-25.4-11.4-25.4-25
+        s11.6-25,25.4-25c13.6,0,24.6,11.2,24.6,25S415.1,933.31,401.5,933.31z M413.1,713.41c-1.8-1.7-4.2-2.6-6.7-2.6h-51.3
+        c-5.5,0-10,4.5-10,10v82c0,5.5,4.5,10,10,10h81.4c5.5,0,10-4.5,10-10v-54.9c0-2.8-1.2-5.5-3.3-7.4L413.1,713.41z M426.5,792.81
+        h-61.4v-62.1h37.4l24,21.6V792.81z M157.3,863.31c-12,0-23.4,4.7-32,13.2c-8.6,8.6-13.4,19.8-13.4,31.8s4.7,23.2,13.4,31.8
+        c8.7,8.5,20,13.2,32,13.2c24.6,0,44.6-20.2,44.6-45S181.9,863.31,157.3,863.31z M157.3,933.31c-13.8,0-25.4-11.4-25.4-25
+        s11.6-25,25.4-25c13.6,0,24.6,11.2,24.6,25S170.9,933.31,157.3,933.31z M90.6,875.61H70.5v-26.6c0-5.5-4.5-10-10-10s-10,4.5-10,10
+        v36.6c0,5.5,4.5,10,10,10h30.1c5.5,0,10-4.5,10-10S96.1,875.61,90.6,875.61z M141.3,821.11c0-5.5-4.5-10-10-10H10
+        c-5.5,0-10,4.5-10,10s4.5,10,10,10h121.3C136.8,831.11,141.3,826.71,141.3,821.11z M30.3,785.01l121.3,0.7c5.5,0,10-4.4,10.1-9.9
+        c0.1-5.6-4.4-10.1-9.9-10.1l-121.3-0.7c-0.1,0-0.1,0-0.1,0c-5.5,0-10,4.4-10,9.9C20.3,780.51,24.8,785.01,30.3,785.01z M50.7,739.61
+        H172c5.5,0,10-4.5,10-10s-4.5-10-10-10H50.7c-5.5,0-10,4.5-10,10S45.2,739.61,50.7,739.61z M487.4,726.11L487.4,726.11l-71.6-59.3
+        c-1.8-1.5-4-2.3-6.4-2.3h-84.2v-36c0-5.5-4.5-10-10-10H60.5c-5.5,0-10,4.5-10,10v73.2c0,5.5,4.5,10,10,10s10-4.5,10-10v-63.2h234.8
+        v237.1h-82c-5.5,0-10,4.5-10,10s4.5,10,10,10h122.1c5.5,0,10-4.5,10-10s-4.5-10-10-10h-20.1v-191.1h80.6l65.2,54l-0.7,136.9H460
+        c-5.5,0-10,4.5-10,10s4.5,10,10,10h20.3c5.5,0,10-4.4,10-9.9l0.8-151.6C491,730.91,489.7,728.01,487.4,726.11z"/>
+    </symbol>
+
+    <symbol id="quest__picture1" viewBox="0 0 451 451">
+        <path d="M447.05,428l-109.6-109.6c29.4-33.8,47.2-77.9,47.2-126.1C384.65,86.2,298.35,0,192.35,0C86.25,0,0.05,86.3,0.05,192.3
+		s86.3,192.3,192.3,192.3c48.2,0,92.3-17.8,126.1-47.2L428.05,447c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4
+		C452.25,441.8,452.25,433.2,447.05,428z M26.95,192.3c0-91.2,74.2-165.3,165.3-165.3c91.2,0,165.3,74.2,165.3,165.3
+		s-74.1,165.4-165.3,165.4C101.15,357.7,26.95,283.5,26.95,192.3z"/>
+    </symbol>
+
+</svg>
+
+<!-- Container -->
+<div class="container">
+
+    <!-- Menu -->
+<div class="menu">
+    <button class="menu__burger menu__burger-line">
+        <span class="menu__burger-item">Menu</span>
+    </button>
+    <div class="menu__logo">
+        <div class="menu__logo-img">
+            <img class="menu__logo-src" src="./img/menu__logo-img/menu__logo-img.png" alt="">
+        </div>
+        <div class="menu__logo-text">
+            <p>Beco</p>
+        </div>
+    </div>
+    <div class="menu__enumeration">
+        <div class="menu__item">
+            <div class="menu__lune"></div>
+            <div class="menu__inner">
+                <svg class="menu__svg">
+                    <use xlink:href="#menu__item_img_1"></use>
+                </svg>
+                <a class="menu__text" href="#">Каталог</a>
+            </div>
+        </div>
+        <div class="menu__item">
+            <div class="menu__lune"></div>
+            <div class="menu__inner">
+                <svg class="menu__svg">
+                    <use xlink:href="#menu__item_img_2"></use>
+                </svg>
+                <a href="#" class="menu__text">Здоровье</a>
+            </div>
+        </div>
+        <div class="menu__item">
+            <div class="menu__lune"></div>
+            <div class="menu__inner">
+                <svg class="menu__svg">
+                    <use xlink:href="#menu__item_img_3"></use>
+                </svg>
+                <a href="#" class="menu__text">Красота</a>
+            </div>
+        </div>
+        <div class="menu__item">
+            <div class="menu__lune"></div>
+            <div class="menu__inner">
+                <svg class="menu__svg">
+                    <use xlink:href="#menu__item_img_4"></use>
+                </svg>
+                <a href="#" class="menu__text">Развлечения</a>
+            </div>
+        </div>
+        <div class="menu__item ">
+            <div class="menu__lune"></div>
+            <div class="menu__inner">
+                <svg class="menu__svg">
+                    <use xlink:href="#menu__item_img_5"></use>
+                </svg>
+                <a href="#" class="menu__text">Авто</a>
+            </div>
+        </div>
+    </div>
+</div><!-- /Menu -->
+
+
+<div class="wrapper-content">
+
+<!-- Header -->
+<header class="header">
+    <div class="header__headline">
+        <p class="header__headline-text">Развлечения</p>
+    </div>
+    <div class="quest">
+        <svg class="quest__picture">
+            <use xlink:href="#quest__picture1"></use>
+        </svg>
+        <input class="quest__input" type="text" placeholder="Какой магазин Вам нужен?">
+    </div>
+</header> <!-- /Header -->
+
+<!-- Cards -->
+<section class="cards">
+    <div class="cards__wrapper">
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                <p>Пробка на Мира</p>
+                </div>
+                <div class="cards__description">
+                    <p>Вечер для двоих</p>
+                </div>
+                <div class="cards__action">
+                <p>-50%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img1.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Кино и немцы</p>
+                </div>
+                <div class="cards__description">
+                    <p>Бесплатный бокал пива</p>
+                </div>
+                <div class="cards__action">
+                    <p>Варвар</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Промокод</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img2.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Valery cakes</p>
+                </div>
+                <div class="cards__description">
+                    <p>Торт</p>
+                </div>
+                <div class="cards__action">
+                    <p>30%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img3.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Sushi sell</p>
+                </div>
+                <div class="cards__description">
+                    <p>Набор "Праздник"</p>
+                </div>
+                <div class="cards__action">
+                    <p>45%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img4.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Mangosteen</p>
+                </div>
+                <div class="cards__description">
+                    <p>Фрукт в подарок</p>
+                </div>
+                <div class="cards__action">
+                    <p>J130</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Купон</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img5.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Теленок табака</p>
+                </div>
+                <div class="cards__description">
+                    <p>Стейк "Мачете"</p>
+                </div>
+                <div class="cards__action">
+                    <p>20%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img6.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Fire food</p>
+                </div>
+                <div class="cards__description">
+                    <p>Вторая шаурма в подарок</p>
+                </div>
+                <div class="cards__action">
+                    <p>Огонь</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Промокод</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img7.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Aroma cremeria</p>
+                </div>
+                <div class="cards__description">
+                    <p>Джелато "Пармезан"</p>
+                </div>
+                <div class="cards__action">
+                    <p>20%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img8.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                <p>Пробка на Мира</p>
+                </div>
+                <div class="cards__description">
+                    <p>Вечер для двоих</p>
+                </div>
+                <div class="cards__action">
+                <p>-50%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img1.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Кино и немцы</p>
+                </div>
+                <div class="cards__description">
+                    <p>Бесплатный бокал пива</p>
+                </div>
+                <div class="cards__action">
+                    <p>Варвар</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Промокод</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img2.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Valery cakes</p>
+                </div>
+                <div class="cards__description">
+                    <p>Торт</p>
+                </div>
+                <div class="cards__action">
+                    <p>30%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img3.png">
+            </div>
+        </div>
+
+        <div class="cards__card">
+            <div class="cards__text">
+                <div class="cards__title">
+                    <p>Sushi sell</p>
+                </div>
+                <div class="cards__description">
+                    <p>Набор "Праздник"</p>
+                </div>
+                <div class="cards__action">
+                    <p>45%</p>
+                </div>
+                <div class="cards__action-description">
+                    <p>Скидка</p>
+                </div>
+            </div>
+            <div class="cards__img-block">
+                <img class="cards__img" src="./img/cards__img/cards__img4.png">
+            </div>
+        </div>
+    </div>
+</section><!-- /Cards -->
+</div>
+
+</div><!-- /Container -->
+
+</body>
+</html>
